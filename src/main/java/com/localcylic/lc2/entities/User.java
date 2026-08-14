@@ -13,15 +13,30 @@ public class User {
 	private String phoneNumber; //can't really remember why it was advised that it should be a string
 	private String email;
 	private String password; // should be hashed, and i didn't check how this is done. The comment is never store them as plain text. So hashing in the storage
-	private Double lattitude; // don't really know why they, why they are seperated as so. Double as... decimals
-	private Double longitude;
-	public User (String userName,String phoneNumber, String email, String password, Double lattitude, Double Longitide){ //and what did the constructor do, or what was my interpretation of it, so it can be accessed outside a scope. This is how i interpretated it
+	private String lattitude; // don't really know why they, why they are seperated as so. Double as... decimals
+	private String longitude;
+	public User (String userName,String phoneNumber, String email, String password, String lattitude, String longitude){ //and what did the constructor do, or what was my interpretation of it, so it can be accessed outside a scope. This is how i interpretated it
 		this.userName=userName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.password = password;
 		this.lattitude = lattitude;
 		this.longitude = longitude;
+	}
+	public String returnUsername() {
+		return userName;
+	}
+	public String returnPhonenumber() {
+		return phoneNumber;
+	}
+	public String returnEmail() {
+		return email;
+	}
+	public String returnLatitude() {
+		return lattitude;
+	}
+	public String returnLongititude() {
+		return longitude;
 	}
 
 	
