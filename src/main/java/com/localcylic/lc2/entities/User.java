@@ -23,6 +23,14 @@ public class User {
 		this.lattitude = lattitude;
 		this.longitude = longitude;
 	}
+	public String toString() {
+		return "\n"+
+				"user name: "+userName + '\n' +
+				 "phone number: "+phoneNumber + '\n' +
+				 "email: "+email+ '\n' +
+				 "location: "+ lattitude + " , " +longitude;
+	}
+	/* logic down here is that i can cast individual records(alone)
 	public String returnUsername() {
 		return userName;
 	}
@@ -38,7 +46,7 @@ public class User {
 	public String returnLongititude() {
 		return longitude;
 	}
-
+*/
 	
 	
 	//and this is just a model, but in saying just it's above just a 'bare' interface
