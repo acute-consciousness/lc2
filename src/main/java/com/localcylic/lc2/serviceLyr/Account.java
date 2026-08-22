@@ -23,17 +23,18 @@ public class Account implements AccountInterface{
 		this.repository=repository;
 	}
 	
-	
+	//		serviceLyrReference.addUser(key,username,email,password,lattitude,longitude);
 	@Override
-	public void addUser(String key, User eric){
+	public void addUser(String key,String userName, String phoneNumber, String email, String password, String lattitude, String longitude){
 //	save need a key of type, a, a, a key of type String, right and a user object, soo call the method,s in, in, in, in the repository
 //		it will need to receive arguement
-		key = "eric";
-	  eric = new User("eric","0700000000", "eric@email.com", "pass1", "56.823", "21.68");
+//			serviceLyrReference.addUser(key,userName,phoneNumber,email,password,lattitude,longitude);
+	  User eric = new User(userName,phoneNumber,email,password,lattitude,longitude);
 		// that use the injected instance, Not static calls
 		repository.save(key, eric);
 	}
 	
+
 	@Override
 	public  User getUser(String key) {
 		User result = repository.retrieve(key);
@@ -41,5 +42,6 @@ public class Account implements AccountInterface{
 			return null;
 		}else return result;
 	}
+
 
 }

@@ -28,23 +28,31 @@ public class Controller {
 	}
 	//mmh, done, done with the Autowired and associates
 	//the methods now i guess
+	/*	public void addUser(){
+//	save need a key of type, a, a, a key of type String, right and a user object, soo call the method,s in, in, in, in the repository
+//		it will need to receive arguement
+		String key = "eric";
+	  User eric = new User("eric","0700000000", "eric@email.com", "pass1", "56.823", "21.68");
+		// that use the injected instance, Not static calls
+		repository.save(key, eric);
+	} 
+ */
+	@PostMapping//what, what, what, what i need is for the label to only, for the labels to only go through
+	public void addObject() {//kwanza withouth arguments, that will be later, i imagine when data comes, comes, mmh, comes, mmh for the client, but yeah we can as param, no, no i don;'t, i don't know what i'm saying
+		//but yeah, like we wer procceding, moving the data 'up-top'. Moving, moving, moving, mmmh, moving the data up-top
+		String key="eric",userName = "eric", phoneNumber = "0700000000", email = "eric@email.com", password = "pass1", lattitude = "56.823", longitude  = "21.68";
+		serviceLyrReference.addUser(key,userName,phoneNumber,email,password,lattitude,longitude);
+	}
 
 	@GetMapping("/verifyuser")//what do i want to do, what do i want to do, what, mmh, what, what, what, what do i want to do?,// what i'm i to get, the users stuff, so there will be more logic to be placed in the serviceLayer, ama we just establish a connection and say found, and, AND RETURN THE OBJECT
 	public ResponseEntity<User> getObject() {// major error - this should not be static, get to understand why this was the reason
 		User result = serviceLyrReference.getUser("eric");
-		try {
-			//ok, should return what?, shouldyea return an object ans so on and so forth, but we, but we, but we, but we also checked out strings, mmh, string and so on, so 
-			//it can also do that but what do we actually want
-			if(result==null) {
-				return ResponseEntity.notFound().build();
-			}
+
 			return ResponseEntity.ok(result);// what this does is just return the user's, returns the user's object
 			// and this should be by, should be by phone number, mmh?
 			//so just for tesing, to return the whole, to return the whole object to the client side - sawa
-		} 
-		finally {
-			System.out.println("??,  but the address is there but not doing as intended");
-		}
+		 
+
 		
 	}
 	
