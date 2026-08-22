@@ -4,5 +4,5 @@ import com.localcylic.lc2.entities.User;
 
 public interface AccountInterface {
 	 void addUser();
-	User getUser();
+	User getUser(String key);
 }

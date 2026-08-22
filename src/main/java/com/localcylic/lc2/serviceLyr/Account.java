@@ -25,18 +25,21 @@ public class Account implements AccountInterface{
 	
 	
 	@Override
-	public void addUser(){
+	public void addUser(String key, User eric){
 //	save need a key of type, a, a, a key of type String, right and a user object, soo call the method,s in, in, in, in the repository
 //		it will need to receive arguement
-		String key = "eric";
-		User eric = new User("eric","0700000000", "eric@email.com", "pass1", "56.823", "21.68");
+		key = "eric";
+	  eric = new User("eric","0700000000", "eric@email.com", "pass1", "56.823", "21.68");
 		// that use the injected instance, Not static calls
 		repository.save(key, eric);
 	}
 	
 	@Override
 	public  User getUser(String key) {
-		return repository.retrieve(key);
+		User result = repository.retrieve(key);
+		if(result==null) {
+			return null;
+		}else return result;
 	}
 
 }

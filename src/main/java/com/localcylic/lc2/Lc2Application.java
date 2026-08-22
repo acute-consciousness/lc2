@@ -33,7 +33,7 @@ public class Lc2Application implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		serviceLyr.addUser();
-		System.out.println('\n'+"CommandLineRunner"+'\n'+serviceLyr.getUser().toString());//both,mmh, both scopes, run
+//		System.out.println('\n'+"CommandLineRunner"+'\n'+serviceLyr.getUser().toString());//both,mmh, both scopes, run
 //		and, and, and it says null, juu we haven't run the, run, mmh, run the, save user, but this, but i, but i, but ishould set up this to be done, to be done by spring
 	}
 
