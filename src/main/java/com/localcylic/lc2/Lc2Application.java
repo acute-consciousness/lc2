@@ -35,7 +35,7 @@ public class Lc2Application implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		controllerLyr.addObject();
 		
-		System.out.println('\n'+"CommandLineRunner Test"+'\n'+ controllerLyr.getObject() .toString());//both,mmh, both scopes, run
+//		System.out.println('\n'+"CommandLineRunner Test"+'\n'+ controllerLyr.getObjectTest() .toString());//both,mmh, both scopes, run
 //		and, and, and it says null, juu we haven't run the, run, mmh, run the, save user, but this, but i, but i, but ishould set up this to be done, to be done by spring
 	}
 

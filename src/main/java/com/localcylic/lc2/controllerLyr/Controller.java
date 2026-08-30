@@ -1,7 +1,9 @@
 package com.localcylic.lc2.controllerLyr;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.ResponseCache;
@@ -40,13 +42,23 @@ public class Controller {
 	@PostMapping//what, what, what, what i need is for the label to only, for the labels to only go through
 	public void addObject() {//kwanza withouth arguments, that will be later, i imagine when data comes, comes, mmh, comes, mmh for the client, but yeah we can as param, no, no i don;'t, i don't know what i'm saying
 		//but yeah, like we wer procceding, moving the data 'up-top'. Moving, moving, moving, mmmh, moving the data up-top
-		String key="eric",userName = "eric", phoneNumber = "0700000000", email = "eric@email.com", password = "pass1", lattitude = "56.823", longitude  = "21.68";
+		String key="0700000000",userName = "eric", phoneNumber = "0700000000", email = "eric@email.com", password = "pass1", lattitude = "56.823", longitude  = "21.68";
 		serviceLyrReference.addUser(key,userName,phoneNumber,email,password,lattitude,longitude);
 	}
 
 	@GetMapping("/verifyuser")//what do i want to do, what do i want to do, what, mmh, what, what, what, what do i want to do?,// what i'm i to get, the users stuff, so there will be more logic to be placed in the serviceLayer, ama we just establish a connection and say found, and, AND RETURN THE OBJECT
-	public ResponseEntity<User> getObject() {// major error - this should not be static, get to understand why this was the reason
-		User result = serviceLyrReference.getUser("eric");
+	public ResponseEntity<User> getObject(@RequestParam String key) {// major error - this should not be static, get to understand why this was the reason
+		User result = serviceLyrReference.getUser(key);
+
+			return ResponseEntity.ok(result);// what this does is just return the user's, returns the user's object
+			// and this should be by, should be by phone number, mmh?
+			//so just for tesing, to return the whole, to return the whole object to the client side - sawa
+				
+	}
+	/*
+	@tetstet("/verifyuser/test")//what do i want to do, what do i want to do, what, mmh, what, what, what, what do i want to do?,// what i'm i to get, the users stuff, so there will be more logic to be placed in the serviceLayer, ama we just establish a connection and say found, and, AND RETURN THE OBJECT
+	public ResponseEntity<User> getObjectTest() {// major error - this should not be static, get to understand why this was the reason
+		User result = serviceLyrReference.getUser("0700000000");
 
 			return ResponseEntity.ok(result);// what this does is just return the user's, returns the user's object
 			// and this should be by, should be by phone number, mmh?
@@ -55,6 +67,7 @@ public class Controller {
 
 		
 	}
+	*/
 	
 
 }
