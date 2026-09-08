@@ -34,6 +34,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		
+		    <!-- Spring Data JPA, sourcef from geeksforgeeks.org, i've seen about JPA. what does it do - it auto-create and uptades tables?? it is that nah
+		    this was when ... is set, mmh, is set to update, is, mmh, is, mmh, is, mmh, is set to update
+		    damn! i have just seen who a 'sylock' is
+		    So JPA it ensures, ensures?, that we just work with object then it handles the, mmh, the i.e 
+		    SELECT... SQL commands-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <!-- PostgreSQL Driver, sourced from geeksforgeeks.org-->
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <scope>runtime</scope>
+    </dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
