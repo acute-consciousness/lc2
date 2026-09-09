@@ -19,6 +19,7 @@ public class JPAAccount {//that do not extend the interface, but looking up what
 	
 	
 //	@Override, no overide, juu hata haziko in the interface...
+//	key,userName,phoneNumber,email,password,lattitude,longitude
 	public void addUser(String verifyKey, String userName, String phoneNumber,
             String email, String password, String latt, String longit) {
 		//the, the, mmh, the User in the entities, prev, it the user was defined in the hashmap repository, but we don't have/ use that no more. Also we are not using any repository layer

@@ -1,6 +1,7 @@
 package com.localcylic.lc2;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,9 +18,27 @@ import com.localcylic.lc2.serviceLyr.Account;
  *checking, checking it put, it, it, it is called  commandLineRunner. mmh
  **/
 @SpringBootApplication
-public class Lc2Application{
+public class Lc2Application implements CommandLineRunner{
+	public final Controller smthing;//i think caps is only mandatory, mmh, kwa, kwa, kwa, kwa what, for a class...interface maybe i don't know
+	@Autowired
+	 public Lc2Application(Controller smthing) {//ata nishasahau, how to make a constructor, ama sijashika inakuanga muscel memory when creating a black class??
+		this.smthing=smthing;
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(Lc2Application.class, args);
+		//lakini i don't really know, mmh, why i'm doing
+		//so
+	
+	}
+
+
+
+	@Override
+	public void run(String... args) throws Exception {		
+		smthing.addUser();
 	}
 
 
