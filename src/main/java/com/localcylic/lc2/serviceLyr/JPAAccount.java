@@ -1,5 +1,7 @@
 package com.localcylic.lc2.serviceLyr;
 
+import java.net.URI;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.localcylic.lc2.entities.User;
 import com.localcylic.lc2.interfaces.JPAAccountInterface;
+
+import enums.ConditionCategory;
+import enums.TypeCategory;
 
 @Service
 public class JPAAccount {//that do not extend the interface, but looking up what should be extended i found that it is interfaces that, mmh, that it is interfaces that should be extended
@@ -56,6 +61,13 @@ public class JPAAccount {//that do not extend the interface, but looking up what
 		List<User>  query = repository.findAll();
 		return query;
 	}
+
+
+	public User getUserById(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
 
 

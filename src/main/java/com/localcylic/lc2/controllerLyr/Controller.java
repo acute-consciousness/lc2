@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.ResponseCache;
+import java.net.URI;
+import java.time.LocalDate;
 
 import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,10 @@ import org.springframework.http.ResponseEntity;
 import com.localcylic.lc2.entities.User;
 import com.localcylic.lc2.serviceLyr.Account;
 import com.localcylic.lc2.serviceLyr.JPAAccount;
+import com.localcylic.lc2.serviceLyr.JPAItems;
+
+import enums.ConditionCategory;
+import enums.TypeCategory;
 
 @RestController
 //so it is a combination of @Contoller  and @responseBody - the one responsible for to and from JSON/XML con, conversion, for now i have interpretated, i, i, i, i have interpretated that it does thins automatically
@@ -30,6 +36,9 @@ public class Controller {
 	{
 		this.serviceLyrReference=serviceLyrReference;
 	}
+	
+
+	
 	//mmh, done, done with the Autowired and associates
 	//the methods now i guess
 	/*	public void addUser(){
@@ -67,6 +76,9 @@ public class Controller {
 	
 	
 	
+	
+	
+	
 
 	/*
 	@tetstet("/verifyuser/test")//what do i want to do, what do i want to do, what, mmh, what, what, what, what do i want to do?,// what i'm i to get, the users stuff, so there will be more logic to be placed in the serviceLayer, ama we just establish a connection and say found, and, AND RETURN THE OBJECT
@@ -87,5 +99,4 @@ public class Controller {
 		return serviceLyrReference.getAllUsers();				
 	}
 	
-
 }
