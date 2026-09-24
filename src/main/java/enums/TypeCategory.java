@@ -1,5 +1,5 @@
 package enums;
 
 public enum TypeCategory {
-	chair, table,bed, sidestand,sofa,wardrobe,mattress, other
+	chair, table,bed, stands,sofa,wardrobe,mattress, other
 }

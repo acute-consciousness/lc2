@@ -3,6 +3,7 @@ package com.localcylic.lc2.serviceLyr;
 import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,8 +65,8 @@ public class JPAAccount {//that do not extend the interface, but looking up what
 
 
 	public User getUserById(Long userId) {
-		// TODO Auto-generated method stub
-		return null;
+	    return repository.findById(userId)
+	            .orElseThrow(() -> new IllegalArgumentException("No user found with id " + userId));
 	}
 	
 }

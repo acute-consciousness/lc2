@@ -26,7 +26,7 @@ import jakarta.persistence.Table;
 public class User {//yea, a class, in our case, a User class was still created much after...
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long iD;
+	private Long id;
 	private String verifyKey;// that if i want the database column to be called 'key', that just add @Column, nimejua what the thing is for. The @Column and how it works, meaning that @GeneratedValue...takes the long iD when generated. We know, mmh, we know how it comes back when the object, mmh, when the object is retrieved
 
 	private String userName;
@@ -44,8 +44,8 @@ public class User {//yea, a class, in our case, a User class was still created m
 	protected User() {
 	}
 	
-	public User (Long iD, String verifyKey,String userName,String phoneNumber, String email, String password, String lattitude, String longitude){ //and what did the constructor do, or what was my interpretation of it, so it can be accessed outside a scope. This is how i interpretated it
-		this.iD=iD;
+	public User (Long id, String verifyKey,String userName,String phoneNumber, String email, String password, String lattitude, String longitude){ //and what did the constructor do, or what was my interpretation of it, so it can be accessed outside a scope. This is how i interpretated it
+		this.id=id;
 		this.verifyKey=verifyKey;
 		this.userName=userName;
 		this.phoneNumber = phoneNumber;
@@ -55,8 +55,8 @@ public class User {//yea, a class, in our case, a User class was still created m
 		this.longitude = longitude;
 	}
 	//getters
-	public Long getiD() {
-		return iD;
+	public Long getId() {
+		return id;
 	}
 	public String getKey() {
 		return verifyKey;

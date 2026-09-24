@@ -1,5 +1,5 @@
 package enums;
 
 public enum ConditionCategory {
-	likeNew, excellent, good, fair, salvageble
+	likeNew, excellent, good, fair, salvagable
 }

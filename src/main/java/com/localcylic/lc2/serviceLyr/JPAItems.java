@@ -37,10 +37,6 @@ public class JPAItems {
 		return repository.findById(userId);
 	}
 
-	public Redistribution getItemById(Long itemId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }

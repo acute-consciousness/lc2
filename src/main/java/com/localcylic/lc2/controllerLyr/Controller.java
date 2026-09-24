@@ -53,22 +53,20 @@ public class Controller {
 	@PostMapping//what, what, what, what i need is for the label to only, for the labels to only go through
 	public void addUser() {//kwanza withouth arguments, that will be later, i imagine when data comes, comes, mmh, comes, mmh for the client, but yeah we can as param, no, no i don;'t, i don't know what i'm saying
 		//but yeah, like we wer procceding, moving the data 'up-top'. Moving, moving, moving, mmmh, moving the data up-top
-		String key="741372978",userName = "eric", phoneNumber = "741372978", email = "erick@email.com", password = "pass1", lattitude = "56.823", longitude  = "21.68";
-		serviceLyrReference.addUser(key,userName,phoneNumber,email,password,lattitude,longitude);
+		//String key="721655488",userName = "Tabitha", phoneNumber = "721655488", email = "tabithawangar@email.com", password = "pass1", lattitude = "56.823", longitude  = "21.68";
+		//serviceLyrReference.addUser(key,userName,phoneNumber,email,password,lattitude,longitude);
 	}
 	
 	
 
 
-	@GetMapping("/verifyuser")//what do i want to do, what do i want to do, what, mmh, what, what, what, what do i want to do?,// what i'm i to get, the users stuff, so there will be more logic to be placed in the serviceLayer, ama we just establish a connection and say found, and, AND RETURN THE OBJECT
-	public ResponseEntity<User> verifyUser(@RequestParam String key) {// major error - this should not be static, get to understand why this was the reason
+	@GetMapping("/verifyuser")
+	public ResponseEntity<User> verifyUser(@RequestParam String key) {
 		User result = serviceLyrReference.verifyUser(key);
 		  if (result == null) {
 		        return ResponseEntity.notFound().build();
 		    }
-			return ResponseEntity.ok(result);// what this does is just return the user's, returns the user's object
-			// and this should be by, should be by phone number, mmh?
-			//so just for tesing, to return the whole, to return the whole object to the client side - sawa
+			return ResponseEntity.ok(result);
 				
 	}
 	
