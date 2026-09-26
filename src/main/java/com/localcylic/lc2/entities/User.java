@@ -80,7 +80,7 @@ public class User {//yea, a class, in our case, a User class was still created m
 	// changed the position of the  method down below, because bpp had it that wa. i haven't yet thought hwow it would or not affect things
 	public String toString() {
 		return "\n"+
-				"iD: "+iD + '\n' +
+				"id: "+id + '\n' +
 				"user name: "+userName + '\n' +
 				 "phone number: "+phoneNumber + '\n' +
 				 "email: "+email+ '\n' +

@@ -26,7 +26,7 @@ import jakarta.persistence.Table;
 public class Redistribution {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long iD;
+	private Long id;
 
 	
 
@@ -58,8 +58,9 @@ public class Redistribution {
 	}
 	
 	
-		public Redistribution( Long iD,URI photo, String description,String price, TypeCategory Type, ConditionCategory Condition,
+		public Redistribution( Long id,URI photo, String description,String price, TypeCategory Type, ConditionCategory Condition,
 			LocalDate createdAt, User user){
+			this.id=id;
 		this.photo=photo;
 		this.description=description;
 		this.price=price;
@@ -69,8 +70,8 @@ public class Redistribution {
 		this.user=user;
 	}
 	//Now to the getters
-	public Long getiD() {
-		return iD;
+	public Long getid() {
+		return id;
 	}
 
 	public URI getPhoto() {
@@ -90,6 +91,9 @@ public class Redistribution {
 	}
 	public LocalDate getDate() {
 		return createdAt;
+	}
+	public Long getuserid() {
+		return user.getId();
 	}
 	
 	

@@ -45,7 +45,7 @@ public class ItemsController {
 				req.getType(), req.getCondition(), req.getCreatedAt(), u);
 	}
 
-	@GetMapping
+	@GetMapping("/getalllistings")
 	public List<Redistribution> getAllItems() {
 		return itmsserviceLyrReference.getItems();
 	}
