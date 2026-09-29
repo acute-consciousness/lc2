@@ -24,9 +24,9 @@ public class JPAItems {
 		this.repository=repository;
 	}
 	
-	public void addItem(URI photo, String description,String price, TypeCategory Type, ConditionCategory Condition,
+	public void addItem(URI photo, String title, String description,String price, TypeCategory Type, ConditionCategory Condition,
 			LocalDate createdAt, User user) {
-		Redistribution u  = new Redistribution (null,photo, description, price, Type, Condition, createdAt, user );
+		Redistribution u  = new Redistribution (null,photo, title, description, price, Type, Condition, createdAt, user );
 		repository.save(u);
 		
 	}

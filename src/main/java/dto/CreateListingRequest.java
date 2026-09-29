@@ -9,8 +9,9 @@ import enums.TypeCategory;
 
 public class CreateListingRequest {
 
-	private Long id; // the User's id — used to look up who is creating the listing
+	private Long id; 
 	private URI photo;
+	private String title;
 	private String description;
 	private String price;
 	private TypeCategory type;
@@ -31,7 +32,7 @@ public class CreateListingRequest {
 
 	public void setPhoto(URI photo) {
 		this.photo = photo;
-	}
+	}	
 
 	public String getDescription() {
 		return description;
@@ -71,5 +72,14 @@ public class CreateListingRequest {
 
 	public void setCreatedAt(LocalDate createdAt) {
 		this.createdAt = createdAt;
+	}
+	
+	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title= title;
 	}
 }

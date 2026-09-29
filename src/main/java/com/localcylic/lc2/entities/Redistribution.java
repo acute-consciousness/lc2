@@ -31,6 +31,9 @@ public class Redistribution {
 	
 
 	private  URI photo;
+	private String title;
+	
+	@Column(columnDefinition = "TEXT")
 	private String description;
 
 	private String price;
@@ -58,10 +61,11 @@ public class Redistribution {
 	}
 	
 	
-		public Redistribution( Long id,URI photo, String description,String price, TypeCategory Type, ConditionCategory Condition,
+		public Redistribution( Long id,URI photo, String title,String description,String price, TypeCategory Type, ConditionCategory Condition,
 			LocalDate createdAt, User user){
 			this.id=id;
 		this.photo=photo;
+		this.title=title;
 		this.description=description;
 		this.price=price;
 		this.Type= Type;
@@ -70,13 +74,18 @@ public class Redistribution {
 		this.user=user;
 	}
 	//Now to the getters
-	public Long getid() {
+	public Long getId() {
 		return id;
 	}
 
 	public URI getPhoto() {
 		return photo;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -92,7 +101,7 @@ public class Redistribution {
 	public LocalDate getDate() {
 		return createdAt;
 	}
-	public Long getuserid() {
+	public Long getuserId() {
 		return user.getId();
 	}
 	

@@ -38,11 +38,12 @@ public class ItemsController {
 	}
 
 	@PostMapping("/createListing")
-	public void addItem(@RequestBody CreateListingRequest req) {
+	public String addItem(@RequestBody CreateListingRequest req) {
 
 		User u = userServiceLyrReference.getUserById(req.getId());
-		itmsserviceLyrReference.addItem(req.getPhoto(), req.getDescription(), req.getPrice(),
+		itmsserviceLyrReference.addItem(req.getPhoto(),req.getTitle(), req.getDescription(), req.getPrice(),
 				req.getType(), req.getCondition(), req.getCreatedAt(), u);
+		return "item created";
 	}
 
 	@GetMapping("/getalllistings")
