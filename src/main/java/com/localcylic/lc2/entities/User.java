@@ -70,6 +70,9 @@ public class User {//yea, a class, in our case, a User class was still created m
 	public String getEmail() {
 		return email;
 	}
+	public String getPassword() {
+		return password;//encryption for this...later
+	}
 	public String getLatitude() {
 		return lattitude;
 	}

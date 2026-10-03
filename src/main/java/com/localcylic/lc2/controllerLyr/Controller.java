@@ -19,6 +19,7 @@ import com.localcylic.lc2.serviceLyr.Account;
 import com.localcylic.lc2.serviceLyr.JPAAccount;
 import com.localcylic.lc2.serviceLyr.JPAItems;
 
+import dto.CreateUserRequest;
 import enums.ConditionCategory;
 import enums.TypeCategory;
 
@@ -50,11 +51,29 @@ public class Controller {
 		repository.save(key, eric);
 	} 
  */
-	@PostMapping//what, what, what, what i need is for the label to only, for the labels to only go through
-	public void addUser() {//kwanza withouth arguments, that will be later, i imagine when data comes, comes, mmh, comes, mmh for the client, but yeah we can as param, no, no i don;'t, i don't know what i'm saying
-		//but yeah, like we wer procceding, moving the data 'up-top'. Moving, moving, moving, mmmh, moving the data up-top
-		//String key="721655488",userName = "Tabitha", phoneNumber = "721655488", email = "tabithawangar@email.com", password = "pass1", lattitude = "56.823", longitude  = "21.68";
-		//serviceLyrReference.addUser(key,userName,phoneNumber,email,password,lattitude,longitude);
+	
+	@PostMapping("/createuser")
+	public ResponseEntity<User> addUser(@RequestBody CreateUserRequest req) {
+		ResponseEntity<User> result = null;
+		try {
+		serviceLyrReference.addUser(
+	        req.getKey(),   // verifyKey
+	        null,           // userName
+	        req.getPhone(), // phoneNumber
+	        null,           // email
+	        null,           // password
+	        null,           // latitude
+	        null            // longitude
+	    );
+		result = verifyUser(req.getKey());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("create user logic process done!");
+		}
+		return result;
 	}
 	
 	
